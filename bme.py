@@ -1,6 +1,6 @@
 import marimo
 
-__generated_with = "0.15.2"
+__generated_with = "0.20.4"
 app = marimo.App()
 
 
@@ -14,7 +14,7 @@ def _():
 
 
 @app.cell
-def _(model):
+def _():
     # Input sentences for inference
     sentences = [
         "My soul died a long, long time ago. It rotted away in place for cowardice, and this body goes on to witness the scars of my cowardice punishment.",
@@ -24,10 +24,14 @@ def _(model):
         "Coke Zero is vastly better than coke diet.",
         "Bananas cost about 25 cents a pop"
     ]
+    return (sentences,)
 
+
+@app.cell
+def _(model, sentences):
     # Generate dense embeddings
     embeddings = model.encode(sentences, normalize_embeddings=True)
-    return embeddings, sentences
+    return (embeddings,)
 
 
 @app.cell
@@ -95,6 +99,7 @@ def _(model):
 
         def vectorize(self):
             return(model.encode(self.attribute, normalize_embeddings=True))
+
     return (embed_ergonomics,)
 
 
