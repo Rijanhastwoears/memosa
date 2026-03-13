@@ -5,5 +5,12 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
-    "supabase>=2.28.0",
+    "duckdb>=1.5.0",
+    "ipython>=9.11.0",
+    "marimo>=0.20.4",
+    "matplotlib>=3.10.8",
+    "numpy>=2.4.3",
+    "scikit-learn>=1.8.0",
+    "sentence-transformers>=5.3.0",
+    "supabase>=2.28.1",
 ]
